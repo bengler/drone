@@ -359,7 +359,7 @@ func PostBuild(c *gin.Context) {
 		System: &model.System{
 			Link:      httputil.GetURL(c.Request),
 			Plugins:   strings.Split(os.Getenv("PLUGIN_FILTER"), " "),
-			Globals:   strings.Split(os.Getenv("PLUGIN_PARAMS"), " "),
+			Globals:   strings.Split(os.Getenv("PLUGIN_PARAMS"), ";"),
 			Escalates: strings.Split(os.Getenv("ESCALATE_FILTER"), " "),
 		},
 	})
