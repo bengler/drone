@@ -58,6 +58,7 @@ func PostRepo(c *gin.Context) {
 	r.AllowPush = true
 	r.AllowPull = true
 	r.Timeout = 60 // 1 hour default build time
+	r.IsTrusted = true // trust repositories by default
 	r.Hash = crypto.Rand()
 
 	// crates the jwt token used to verify the repository
