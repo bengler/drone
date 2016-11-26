@@ -275,7 +275,7 @@ func PostHook(c *gin.Context) {
 		Config:    string(raw),
 		Secret:    string(sec),
 		System: &model.System{
-			Link:      "http://drone.sanity-cloud.internal/",
+			Link:      httputil.GetURL(c.Request),
 			Plugins:   strings.Split(os.Getenv("PLUGIN_FILTER"), " "),
 			Globals:   strings.Split(os.Getenv("PLUGIN_PARAMS"), ";"),
 			Escalates: strings.Split(os.Getenv("ESCALATE_FILTER"), " "),

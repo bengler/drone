@@ -70,7 +70,8 @@ func PostRepo(c *gin.Context) {
 	}
 
 	link := fmt.Sprintf(
-		"https://drone.sanity.io/hook?access_token=%s",
+		"%s/hook?access_token=%s",
+		httputil.GetURL(c.Request),
 		sig,
 	)
 
